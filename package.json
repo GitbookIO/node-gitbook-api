@@ -11,7 +11,10 @@
     "dependencies": {
         "lodash": "2.4.1",
         "q": "0.9.6",
-        "request": "2.34.0"
+        "request": "2.34.0",
+        "tar": "0.1.19",
+        "fstream": "0.1.25",
+        "zlib": "1.0.5"
     },
     "repository": {
         "type": "git",
