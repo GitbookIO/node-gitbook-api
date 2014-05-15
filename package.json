@@ -14,7 +14,8 @@
         "request": "2.34.0",
         "tar": "0.1.19",
         "fstream": "0.1.25",
-        "zlib": "1.0.5"
+        "zlib": "1.0.5",
+        "tmp": "0.0.23"
     },
     "repository": {
         "type": "git",
