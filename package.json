@@ -3,13 +3,13 @@
     "name": "gitbook-api",
     "main": "lib/index.js",
     "description": "Client for GitBook (gitbook.io) API.",
-    "version": "0.0.7",
+    "version": "0.1.0",
     "keywords": [
         "gitbook"
     ],
     "homepage": "https://www.gitbook.io",
     "bugs": "https://github.com/GitbookIO/api-client/issues",
-    "engines": { 
+    "engines": {
         "node": ">=0.6"
     },
     "dependencies": {
