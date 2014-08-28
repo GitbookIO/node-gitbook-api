@@ -9,14 +9,16 @@
     ],
     "homepage": "https://www.gitbook.io",
     "bugs": "https://github.com/GitbookIO/api-client/issues",
+    "engines": { 
+        "node": ">=0.6"
+    },
     "dependencies": {
-        "lodash": "2.4.1",
-        "q": "0.9.6",
-        "request": "2.34.0",
-        "tar": "0.1.19",
-        "fstream": "0.1.25",
-        "zlib": "1.0.5",
-        "tmp": "0.0.23"
+        "lodash": "^2.4",
+        "q": "^0.9",
+        "request": "^2.34",
+        "tar": "^0.1",
+        "fstream": "^0.1",
+        "tmp": "^0"
     },
     "repository": {
         "type": "git",
