@@ -20,23 +20,43 @@ var GitBook = require("gitbook-api");
 var client = new GitBook();
 ```
 
-#### Authentication
+Create an API client with an authentified user:
 
 ```js
 var client = new GitBook({
-    auth: {
-        username: "Me",
-
-        // Password or API token
-        password: "mypassword"
-    }
+    username: "MyUsername",
+    token: "password or token"
 });
 ```
 
-#### List user books
+To use this api client with a GitBook Enterprise instance, simply add a `host` option, example: `"host": "http://gitbook.mycompany.com"`.
+
+#### List books
+
+List books fron the authenticated user:
 
 ```js
-client.books().then(function(books) { });
+client.books()
+.then(function(result) {
+    // result.list: list of books
+    // result.total: total count of books
+}, function(err) {
+    // Error occured
+});
+```
+
+List all public books:
+
+
+```js
+client.books('all')
+```
+
+Use pagination:
+
+```js
+client.books({ skip: 50, limit: 100 })
+client.books('all', { skip: 50, limit: 100 })
 ```
 
 #### Get a specific book
