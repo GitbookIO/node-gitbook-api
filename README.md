@@ -1,7 +1,9 @@
-GitBook API Client
+node-gitbook-api
 ==========
 
-This is a node client library for the GitBook (https://www.gitbook.io) API.
+This is a javascript/node client library for the GitBook (https://www.gitbook.com) API.
+
+This API is promise-based.
 
 ## Installation
 
@@ -25,7 +27,7 @@ var client = new GitBook({
     auth: {
         username: "Me",
 
-        // password or token
+        // Password or API token
         password: "mypassword"
     }
 });
@@ -34,24 +36,11 @@ var client = new GitBook({
 #### List user books
 
 ```js
-client.books()
-.then(function(books) {
-    // 'books' is a list of Book objects
-    console.log(books);
-});
+client.books().then(function(books) { });
 ```
 
 #### Get a specific book
 
 ```js
-client.book("GitBookIO/javascript")
-.then(function(book) {
-    // 'book' is a Book object
-});
-```
-
-#### Publish a book
-
-```js
-book.publishFolder("0.0.1", "./book")
+client.book("GitBookIO/javascript").then(function(book) { });
 ```
