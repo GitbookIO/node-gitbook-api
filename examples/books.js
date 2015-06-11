@@ -1,4 +1,4 @@
 var debug = require("./debug");
 var client = require("./client");
 
-debug(client.books());
+debug(client.books('all'));
