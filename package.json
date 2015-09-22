@@ -3,7 +3,7 @@
     "name": "gitbook-api",
     "main": "lib/index.js",
     "description": "API Client for GitBook (gitbook.com)",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "keywords": [
         "gitbook"
     ],
