@@ -65,7 +65,7 @@ client.books('all', { skip: 50, limit: 100 })
 client.book("GitBookIO/javascript").then(function(book) { });
 ```
 
-#### Get detils about an author
+#### Get details about an author
 
 ```js
 client.author("GitBookIO").then(function(org) { });
