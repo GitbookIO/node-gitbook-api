@@ -7,20 +7,28 @@
     "keywords": [
         "gitbook"
     ],
+    "license": "Apache-2.0",
     "homepage": "https://www.gitbook.com",
     "bugs": "https://github.com/GitbookIO/node-gitbook-api/issues",
     "engines": {
         "node": ">=0.6"
     },
     "dependencies": {
-        "q": "1.3.0",
+        "q": "^1.3.0",
         "lodash": "^3.9.3",
         "request": "2.60.0",
         "js-base64": "2.1.9",
         "urljoin.js": "0.1.0"
     },
+    "devDependencies": {
+        "mocha": "1.18.2",
+        "should": "7.0.4"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/GitbookIO/node-gitbook-api.git"
+    },
+    "scripts": {
+        "test": "node_modules/.bin/mocha --reporter spec --timeout 15000"
     }
 }
