@@ -37,9 +37,12 @@ List books fron the authenticated user:
 
 ```js
 client.books()
-.then(function(result) {
-    // result.list: list of books
-    // result.total: total count of books
+.then(function(page) {
+    // page.list: list of books
+    // page.total: total count of books
+
+    // Fetch next page
+    return page.next();
 }, function(err) {
     // Error occured
 });
@@ -52,21 +55,16 @@ List all public books:
 client.books('all')
 ```
 
-Use pagination:
-
-```js
-client.books({ skip: 50, limit: 100 })
-client.books('all', { skip: 50, limit: 100 })
-```
-
 #### Get a specific book
 
 ```js
-client.book("GitBookIO/javascript").then(function(book) { });
+var book = client.book("GitBookIO/javascript");
+book.details().then(function(infos) { ... });
 ```
 
 #### Get details about an author
 
 ```js
-client.author("GitBookIO").then(function(org) { });
+var author = client.author("GitBookIO");
+author.then(function(infos) { ... });
 ```
