@@ -29,6 +29,14 @@ var client = new GitBook({
 });
 ```
 
+Or using an oauth token:
+
+```js
+var client = new GitBook({
+    token: "oauth token"
+});
+```
+
 To use this api client with a GitBook Enterprise instance, simply add a `host` option, example: `"host": "http://gitbook.mycompany.com"`.
 
 #### List books
