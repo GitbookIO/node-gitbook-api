@@ -12,7 +12,7 @@ describe('Book', function() {
     });
 
     it('should correctly list books', function() {
-        return client.books()
+        return client.books('all')
         .then(function(r) {
             r.list.should.be.an.Array();
         });
