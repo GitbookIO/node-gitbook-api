@@ -28,7 +28,7 @@ class ApiClient {
         this.endpoint = config.host || config.apiHost;
 
         // Set Basic Auth informations
-        this.auth = (account && account.username) ?
+        this.auth = (account && account.token) ?
             btoa(account.username + ':' + ((account.auth ? account.auth.token : account.token)) || '')
             : null;
 
