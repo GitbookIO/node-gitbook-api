@@ -1,22 +1,23 @@
-var client = require('./client');
+const GitBookAPI = require('../src');
 
-describe('Book', function() {
+describe('Book', () => {
 
-    it('should correctly get infos about a book', function() {
-        var book = client.book('gitbookio/documentation')
+    it('should correctly get infos about a book', () => {
+        const client = new GitBookAPI();
+        const book = client.book('gitbookio/documentation');
 
         return book.info()
-        .then(function(details) {
+        .then((details) => {
             details.id.should.equal('gitbookio/documentation');
         });
     });
 
-    it('should correctly list books', function() {
+    it('should correctly list books', () => {
+        const client = new GitBookAPI();
         return client.books('all')
-        .then(function(r) {
+        .then((r) => {
             r.list.should.be.an.Array();
         });
     });
 
 });
-

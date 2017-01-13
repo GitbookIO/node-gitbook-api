@@ -1,4 +1,15 @@
-var should = require('should');
-var GitBook = require('../lib');
+const expect = require('expect');
+const GitBookAPI = require('../src');
 
-module.exports = new GitBook();
+describe('Client', () => {
+
+    it('should return json response', () => {
+        const client = new GitBookAPI();
+
+        return client.get('book/gitbookio/documentation')
+        .then((details) => {
+            expect(details.id).toBe('gitbookio/documentation');
+        });
+    });
+
+});
