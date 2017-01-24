@@ -69,15 +69,14 @@ class ApiClient {
      *                        - {Object} params: An Object containing the query string parameters to encode
      * @return {Promise}
      */
-    request(url, opts) {
-        // Default options
-        opts = opts || {};
-
+    request(url, opts = {}) {
         // Configuration for fetch
-        const headers = this.headers;
         const cfg = {
             method: opts.method || 'GET',
-            headers
+            headers: {
+                ...(this.headers),
+                ...(opts.headers || {})
+            }
         };
 
         if (Boolean(opts.data)) {
@@ -98,8 +97,9 @@ class ApiClient {
      * @param  {Object} params
      * @return {Promise}
      */
-    delete(url, params) {
+    delete(url, params, options = {}) {
         return this.request(url, {
+            ...options,
             method: 'DELETE',
             params
         });
@@ -112,8 +112,9 @@ class ApiClient {
      * @param  {Object} params
      * @return {Promise}
      */
-    get(url, params) {
+    get(url, params, options = {}) {
         return this.request(url, {
+            ...options,
             params
         });
     }
@@ -126,11 +127,11 @@ class ApiClient {
      * @param  {Object} data
      * @return {Promise}
      */
-    patch(url, data, params) {
+    patch(url, data, options = {}) {
         return this.request(url, {
+            ...options,
             method: 'PATCH',
-            data,
-            params
+            data
         });
     }
 
@@ -142,11 +143,11 @@ class ApiClient {
      * @param  {Object} data
      * @return {Promise}
      */
-    post(url, data, params) {
+    post(url, data, options = {}) {
         return this.request(url, {
+            ...options,
             method: 'POST',
-            data,
-            params
+            data
         });
     }
 
@@ -158,11 +159,11 @@ class ApiClient {
      * @param  {Object} data
      * @return {Promise}
      */
-    put(url, data, params) {
+    put(url, data, options = {}) {
         return this.request(url, {
+            ...options,
             method: 'PUT',
-            data,
-            params
+            data
         });
     }
 
