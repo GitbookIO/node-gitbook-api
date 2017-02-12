@@ -3,7 +3,7 @@
     "main": "lib/index.js",
     "author": "Samy Pessé <samypesse@gmail.com>",
     "description": "API Client for GitBook.com (gitbook.com)",
-    "version": "3.0.1",
+    "version": "3.0.2",
     "keywords": [
         "gitbook"
     ],
