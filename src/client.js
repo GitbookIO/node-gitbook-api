@@ -28,15 +28,19 @@ class ApiClient {
         this.endpoint = config.host || config.apiHost;
 
         // Set Basic Auth informations
-        this.auth = (account && account.token) ?
-            btoa(account.username + ':' + ((account.auth ? account.auth.token : account.token)) || '')
-            : null;
+        this.auth = undefined;
+
+        if (account.username && account.token) {
+            this.auth = `Basic ${btoa(account.username + ':' + account.token)}`;
+        } else if (account.token) {
+            this.auth = `Bearer ${account.token}`;
+        }
 
         // Set common headers
         this.headers = {
             'Accept':        'application/json',
             'Content-Type':  'application/json',
-            'Authorization': this.auth ? 'Basic ' + this.auth : undefined
+            'Authorization': this.auth
         };
     }
 
